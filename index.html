@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>その列車は行き先を知らない｜劇団.zip</title>
+<meta name="description" content="劇団.zip 公演『その列車は行き先を知らない』2026年12月5日(土)・6日(日) つくば Bar Caduceus にて上演。作：中畔伊織">
+<meta property="og:title" content="その列車は行き先を知らない｜劇団.zip">
+<meta property="og:description" content="2026.12.5 sat – 12.6 sun ／ つくば Bar Caduceus">
+<meta property="og:image" content="assets/ogp.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E07C6D">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Cormorant+SC:wght@600;700&family=Shippori+Mincho+B1:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coral:#E07C6D;      /* ビラの地色 */
+  --ink:#0B0606;        /* 唇の黒（わずかに赤みを含む黒） */
+  --paper:#FBEDE8;      /* 黒地の上で使う淡色（純白は避ける） */
+  --coral-deep:#C9604F; /* 罫線・ホバー用 */
+  --latin:"Cormorant SC","Cormorant Garamond",serif;
+  --num:"Cormorant Garamond",serif;
+  --ja:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --w:min(1080px,88vw);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--coral);color:var(--ink);font-family:var(--ja);font-weight:500;line-height:1.9;letter-spacing:.06em;font-feature-settings:"palt" 0}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+
+/* header */
+.hd{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(18px,4vw,40px);pointer-events:none}
+.hd>*{pointer-events:auto}
+.hd .logo{font-family:var(--ja);font-weight:700;text-decoration:none;font-size:14px;letter-spacing:.12em}
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--latin);font-weight:700;font-size:15px;letter-spacing:.16em;text-decoration:none;background:var(--ink);color:var(--coral);padding:.7em 1.5em .75em;border-radius:999px;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn .arr{font-family:var(--num);transition:transform .2s}
+.btn:hover .arr{transform:translateX(4px)}
+.btn.inv{background:var(--coral);color:var(--ink)}
+.btn.lg{font-size:clamp(18px,2.2vw,24px);padding:.8em 2.2em .85em}
+
+/* hero */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:96px 6vw 120px;position:relative}
+.hero .pre{font-family:var(--latin);font-size:clamp(13px,1.3vw,16px);letter-spacing:.3em;margin-bottom:clamp(20px,4vh,40px)}
+.hero h1{margin:0 auto;width:min(620px,84vw)}
+.hero h1 img{width:100%;height:auto;animation:breathe 6s ease-in-out infinite;transform-origin:50% 60%}
+.hero .meta{margin-top:clamp(28px,5vh,48px);display:grid;gap:6px}
+.hero .date{font-family:var(--num);font-weight:600;font-size:clamp(26px,3.6vw,40px);letter-spacing:.06em;line-height:1.2}
+.hero .date small{font-family:var(--latin);font-size:.55em;letter-spacing:.14em}
+.hero .venue{font-size:14px;letter-spacing:.14em}
+.hero .cta{margin-top:clamp(24px,4vh,36px)}
+.scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-family:var(--latin);font-size:11px;letter-spacing:.3em}
+.scroll::after{content:"";display:block;width:1px;height:36px;background:var(--ink);margin:8px auto 0;animation:drop 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@keyframes drop{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* ticker */
+.ticker{background:var(--ink);color:var(--coral);overflow:hidden;white-space:nowrap;border-block:1px solid var(--ink)}
+.ticker div{display:inline-block;padding:10px 0;font-family:var(--latin);font-size:14px;letter-spacing:.3em;animation:run 40s linear infinite}
+.ticker span{margin:0 2.2em}
+@keyframes run{to{transform:translateX(-50%)}}
+
+.mini-sns{list-style:none;display:flex;justify-content:center;gap:22px;margin-top:18px}
+.mini-sns.left{justify-content:flex-start;margin-top:16px}
+.mini-sns a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-family:var(--num);font-weight:600;font-size:14px;letter-spacing:.06em;opacity:.85;transition:opacity .2s}
+.mini-sns a:hover{opacity:1;text-decoration:underline;text-underline-offset:3px}
+.mini-sns svg{width:15px;height:15px;fill:currentColor}
+
+/* PV */
+.pv{background:var(--ink);color:var(--paper);padding:clamp(72px,12vw,140px) 0}
+.inner{width:var(--w);margin:0 auto}
+.label{font-family:var(--latin);font-weight:700;font-size:clamp(34px,5vw,56px);letter-spacing:.02em;line-height:1;margin-bottom:clamp(24px,4vw,40px)}
+.pv .label{color:var(--coral)}
+.video{position:relative;aspect-ratio:16/9;width:100%;background:#1a0f0e;border:1px solid #3a2321;overflow:hidden}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ph{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:18px;text-align:center}
+.ph .play{width:84px;height:84px;border-radius:50%;border:1px solid var(--coral);display:grid;place-items:center}
+.ph .play::before{content:"";border-left:20px solid var(--coral);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:6px}
+.ph p{font-family:var(--latin);letter-spacing:.3em;font-size:14px;color:var(--coral)}
+.ph small{font-size:12px;opacity:.6;letter-spacing:.1em}
+
+/* flyer */
+.flyer-sec{padding:clamp(80px,12vw,150px) 0}
+.flyer-sec .label{text-align:center}
+.flyer{width:min(760px,100%);margin:0 auto}
+.flyer button{all:unset;cursor:zoom-in;display:block;width:100%;box-shadow:0 40px 80px -36px rgba(11,6,6,.6);transition:transform .3s}
+.flyer button:hover{transform:translateY(-4px)}
+.flyer button:focus-visible{outline:2px solid var(--ink);outline-offset:6px}
+.flyer figcaption{font-family:var(--latin);font-size:12px;letter-spacing:.24em;margin-top:16px;text-align:center}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* info */
+.info{padding:clamp(72px,10vw,130px) 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(48px,6vw,80px) clamp(32px,6vw,96px)}
+.blk h3{font-family:var(--latin);font-weight:700;font-size:clamp(24px,2.6vw,30px);line-height:1;margin-bottom:18px}
+.day{font-family:var(--num);font-weight:600;font-size:clamp(24px,2.6vw,30px);margin:14px 0 4px;letter-spacing:.04em}
+.day small{font-family:var(--latin);font-size:.62em}
+.sched{list-style:none;font-family:var(--num);font-size:clamp(16px,1.6vw,19px);font-weight:600}
+.sched li{display:grid;grid-template-columns:2em 1fr 1fr;padding:6px 0;border-bottom:1px solid rgba(11,6,6,.25)}
+.sched span{font-family:var(--ja);font-size:.78em;font-weight:500;margin-left:.4em}
+.note{font-size:13px;margin-top:14px}
+.price{font-family:var(--num);font-weight:600;font-size:clamp(36px,4.4vw,52px);line-height:1}
+.price span{font-family:var(--ja);font-size:.42em;margin-left:.15em}
+.venue-name{font-family:var(--num);font-weight:600;font-size:clamp(24px,2.6vw,30px);line-height:1.3}
+.small{font-size:14px;line-height:2}
+.credit dt{font-family:var(--latin);font-size:13px;letter-spacing:.24em;margin-top:18px}
+.credit dt:first-child{margin-top:0}
+.credit dd{font-size:clamp(16px,1.6vw,19px);font-weight:700;line-height:2}
+.credit dd span{white-space:nowrap}
+.credit dd.staff{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px 40px;margin-top:6px;font-weight:500}
+.staff div{display:flex;flex-direction:column;padding:10px 0;border-bottom:1px solid rgba(11,6,6,.25);line-height:1.6}
+.staff .role{font-size:12px;letter-spacing:.12em;opacity:.8}
+.staff .who{font-size:clamp(15px,1.4vw,17px);font-weight:700}
+.blk .btn{margin-top:22px}
+
+/* footer */
+.ft{background:var(--ink);color:var(--paper);padding:clamp(72px,10vw,120px) 0 40px;text-align:center}
+.ft .lips{width:min(240px,50vw);margin:0 auto 36px}
+.ft .sns{display:flex;justify-content:center;gap:28px;margin-top:40px;list-style:none}
+.ft .sns a{font-family:var(--latin);letter-spacing:.24em;font-size:14px;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;color:var(--coral)}
+.ft .copy{margin-top:56px;font-size:11px;letter-spacing:.2em;opacity:.55}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(11,6,6,.92);display:none;place-items:center;padding:4vh 4vw;cursor:zoom-out}
+.lb.on{display:grid}
+.lb img{max-height:94vh;width:auto;max-width:100%}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:760px){
+  .grid{grid-template-columns:1fr}
+  .hd .btn{font-size:13px;padding:.6em 1.2em .65em}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <a class="logo" href="#top">劇団.zip</a>
+  <a class="btn" href="https://tiget.net/events/537178" target="_blank" rel="noopener">TICKET <span class="arr">→</span></a>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div>
+      <p class="pre">Gekidan.zip presents</p>
+      <h1><img src="assets/lips.png" alt="その列車は行き先を知らない" width="932" height="682"></h1>
+      <div class="meta">
+        <p class="date">2026.12.5 <small>sat</small> — 12.6 <small>sun</small></p>
+        <p class="venue">つくば　Bar Caduceus</p>
+      </div>
+      <p class="cta"><a class="btn lg" href="https://tiget.net/events/537178" target="_blank" rel="noopener">TICKET <span class="arr">→</span></a></p>
+      <ul class="mini-sns"><li><a href="https://x.com/GekidanZip" target="_blank" rel="noopener" aria-label="劇団.zip X（旧Twitter）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.2h1.7L7.4 4.73H5.58L16.67 19.2Z"/></svg><span>@GekidanZip</span></a></li><li><a href="https://www.instagram.com/gekidan.zip/" target="_blank" rel="noopener" aria-label="劇団.zip Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2Zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2Zm5-8.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 2.5c-2.6 0-2.9 0-3.9.06-3.5.16-5.4 2.1-5.6 5.6C2.5 9.1 2.5 9.4 2.5 12s0 2.9.06 3.9c.16 3.5 2.1 5.4 5.6 5.6 1 .05 1.3.06 3.9.06s2.9 0 3.9-.06c3.5-.16 5.4-2.1 5.6-5.6.05-1 .06-1.3.06-3.9s0-2.9-.06-3.9c-.16-3.5-2.1-5.4-5.6-5.6-1-.05-1.3-.06-3.9-.06Zm0 1.7c2.5 0 2.8 0 3.8.06 2.6.12 3.8 1.35 3.9 3.9.05 1 .06 1.3.06 3.8s0 2.8-.06 3.8c-.12 2.6-1.33 3.8-3.9 3.9-1 .05-1.3.06-3.8.06s-2.8 0-3.8-.06c-2.6-.12-3.8-1.34-3.9-3.9-.05-1-.06-1.3-.06-3.8s0-2.8.06-3.8c.12-2.6 1.34-3.8 3.9-3.9 1-.05 1.3-.06 3.8-.06Z"/></svg><span>@gekidan.zip</span></a></li></ul>
+    </div>
+    <span class="scroll" aria-hidden="true">Scroll</span>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div>
+    <span>その列車は行き先を知らない</span><span>The train doesn't know where it's going</span><span>その列車は行き先を知らない</span><span>The train doesn't know where it's going</span>
+    <span>その列車は行き先を知らない</span><span>The train doesn't know where it's going</span><span>その列車は行き先を知らない</span><span>The train doesn't know where it's going</span>
+  </div></div>
+
+
+
+
+
+
+  <section class="info" id="info">
+    <div class="inner">
+      <h2 class="label rv">Information</h2>
+      <div class="grid">
+      <div class="blk rv">
+        <h3>Dates</h3>
+        <p class="day">12/5 <small>sat</small></p>
+        <ul class="sched">
+          <li>①<b>12:40<span>開場</span></b><b>12:50<span>開演</span></b></li>
+          <li>②<b>14:20<span>開場</span></b><b>14:30<span>開演</span></b></li>
+          <li>③<b>16:00<span>開場</span></b><b>16:10<span>開演</span></b></li>
+        </ul>
+        <p class="day">12/6 <small>sun</small></p>
+        <ul class="sched">
+          <li>④<b>11:00<span>開場</span></b><b>11:10<span>開演</span></b></li>
+          <li>⑤<b>12:40<span>開場</span></b><b>12:50<span>開演</span></b></li>
+          <li>⑥<b>14:20<span>開場</span></b><b>14:30<span>開演</span></b></li>
+          <li>⑦<b>16:00<span>開場</span></b><b>16:10<span>開演</span></b></li>
+        </ul>
+        <p class="note">※公演時間 約60分</p>
+      </div>
+
+      <div>
+        <div class="blk rv">
+          <h3>Ticket</h3>
+          <p class="price">1,500<span>円</span></p>
+          <p class="small">※ワンドリンク付き</p>
+          <a class="btn" href="https://tiget.net/events/537178" target="_blank" rel="noopener">チケットを予約する <span class="arr">→</span></a>
+          <ul class="mini-sns left"><li><a href="https://x.com/GekidanZip" target="_blank" rel="noopener" aria-label="劇団.zip X（旧Twitter）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.2h1.7L7.4 4.73H5.58L16.67 19.2Z"/></svg><span>@GekidanZip</span></a></li><li><a href="https://www.instagram.com/gekidan.zip/" target="_blank" rel="noopener" aria-label="劇団.zip Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2Zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2Zm5-8.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 2.5c-2.6 0-2.9 0-3.9.06-3.5.16-5.4 2.1-5.6 5.6C2.5 9.1 2.5 9.4 2.5 12s0 2.9.06 3.9c.16 3.5 2.1 5.4 5.6 5.6 1 .05 1.3.06 3.9.06s2.9 0 3.9-.06c3.5-.16 5.4-2.1 5.6-5.6.05-1 .06-1.3.06-3.9s0-2.9-.06-3.9c-.16-3.5-2.1-5.4-5.6-5.6-1-.05-1.3-.06-3.9-.06Zm0 1.7c2.5 0 2.8 0 3.8.06 2.6.12 3.8 1.35 3.9 3.9.05 1 .06 1.3.06 3.8s0 2.8-.06 3.8c-.12 2.6-1.33 3.8-3.9 3.9-1 .05-1.3.06-3.8.06s-2.8 0-3.8-.06c-2.6-.12-3.8-1.34-3.9-3.9-.05-1-.06-1.3-.06-3.8s0-2.8.06-3.8c.12-2.6 1.34-3.8 3.9-3.9 1-.05 1.3-.06 3.8-.06Z"/></svg><span>@gekidan.zip</span></a></li></ul>
+        </div>
+        <div class="blk rv" style="margin-top:clamp(48px,6vw,72px)">
+          <h3>Venue</h3>
+          <p class="venue-name">Bar Caduceus</p>
+          <p class="small">茨城県つくば市天久保1-10-18<br>リッチモンド1番街 202<br>つくばエクスプレス「つくば駅」よりバスで15分／徒歩25分</p>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E8%8C%A8%E5%9F%8E%E7%9C%8C%E3%81%A4%E3%81%8F%E3%81%B0%E5%B8%82%E5%A4%A9%E4%B9%85%E4%BF%9D1-10-18" target="_blank" rel="noopener">MAP <span class="arr">→</span></a>
+        </div>
+      </div>
+
+      <dl class="blk credit rv" style="grid-column:1/-1">
+        <dt>Written by</dt>
+        <dd>中畔伊織</dd>
+        <dt>Cast</dt>
+        <dd><span>寒天カナコ</span> ／ <span>中村武尊</span> ／ <span>根本大輝</span> ／ <span>堀智穂子</span> ／ <span>香川直寛</span> ／ <span>宮崎シノブ</span> ／ <span>関口きり</span></dd>
+        <dt>Staff</dt>
+        <dd class="staff">
+            <div><span class="role">企画</span><span class="who">劇団.zip</span></div>
+            <div><span class="role">脚本・演出</span><span class="who">中畔伊織</span></div>
+            <div><span class="role">制作統括・進行管理</span><span class="who">寒天カナコ</span></div>
+            <div><span class="role">制作補佐</span><span class="who">根本大輝</span></div>
+            <div><span class="role">制作アドバイザー</span><span class="who">中村武尊</span></div>
+            <div><span class="role">会場交渉</span><span class="who">百海結妃、中畔伊織、木全美羽</span></div>
+            <div><span class="role">オリジナルドリンク開発</span><span class="who">木全美羽</span></div>
+            <div><span class="role">映像制作</span><span class="who">藤永登真</span></div>
+            <div><span class="role">ウェブサイト制作</span><span class="who">中畔伊織</span></div>
+            <div><span class="role">フライヤーデザイン</span><span class="who">井口可憐</span></div>
+            <div><span class="role">チケットデザイン</span><span class="who">香川直寛</span></div>
+            <div><span class="role">総合責任者</span><span class="who">百海結妃</span></div>
+        </dd>
+      </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="pv" id="pv">
+    <div class="inner rv">
+      <h2 class="label">Trailer</h2>
+      <!-- PV公開時：data-youtube に動画IDを入れるだけで埋め込みに切り替わります -->
+      <div class="video" data-youtube="">
+        <div class="ph">
+          <span class="play" aria-hidden="true"></span>
+          <p>Coming Soon</p>
+          <small>PV 公開まで今しばらくお待ちください</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flyer-sec" id="flyer">
+    <div class="inner">
+      <h2 class="label rv">Flyer</h2>
+      <figure class="flyer rv">
+        <button type="button" id="openFlyer" aria-label="ビラを拡大表示"><img src="assets/flyer-web.jpg" alt="公演ビラ" width="1600" height="2262" loading="lazy"></button>
+        <figcaption>Click to enlarge</figcaption>
+      </figure>
+      <div class="sr-only">
+        <h3>あらすじ</h3>
+        <p>少女は、絶望していた。</p>
+        <p>原因は母親の死、父親からの暴力、詐欺、いじめ、父親の交際相手からの暴力、暴力、あとなんだっけ…本人が色々言ってたんだけど…多すぎるため省略。</p>
+        <p>そして彼女は、最後の力を振り絞り、家を飛び出した。行く宛も、生きる理由もないのに。</p>
+        <p>走り続けて、走り続けて、丘の上でようやく一休みし、日の出を見ようとふと目線を落とすと、明らかに正気ではない、見知らぬ男が追いかけてきているのに気づいた。らしい。助けを求め、また走る。とうに限界を迎えた足を抱えながら。なんとか辿り着いたのは、地元のバー。</p>
+        <p>バーでは個性的であたたかい常連に助けられ、ようやく居場所を見つける！常連の男と何やらいい感じになって、幸せそうな顔をしてた。</p>
+        <p>しかし残酷にも、そんな平穏は続かない！入り込むストーカー！彼女と接しているときに感じる、非人間的な違和感！彼女の禁断の過去をめぐる愛憎劇！イェイ！</p>
+        <p>とにかく、あんなことになる前に、色々あったんだよ。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <img class="lips" src="assets/lips-coral.png" alt="" aria-hidden="true">
+  <a class="btn inv lg" href="https://tiget.net/events/537178" target="_blank" rel="noopener">TICKET <span class="arr">→</span></a>
+  <ul class="sns">
+    <li><a href="https://x.com/GekidanZip" target="_blank" rel="noopener">X</a></li>
+    <li><a href="https://www.instagram.com/gekidan.zip/" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+  <p class="copy">© 劇団.zip</p>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-label="ビラ拡大表示"><img src="assets/flyer-web.jpg" alt="公演ビラ（拡大）"></div>
+
+<script>
+// PV: data-youtube に動画IDが入っていれば埋め込みに差し替え
+document.querySelectorAll('.video[data-youtube]').forEach(v=>{
+  const id=v.dataset.youtube.trim(); if(!id) return;
+  v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0" title="PV" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+});
+// reveal
+const io='IntersectionObserver' in window ? new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12}) : null;
+document.querySelectorAll('.rv').forEach(el=>io?io.observe(el):el.classList.add('in'));
+// lightbox
+const lb=document.getElementById('lb');
+document.getElementById('openFlyer').addEventListener('click',()=>lb.classList.add('on'));
+lb.addEventListener('click',()=>lb.classList.remove('on'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+</script>
+</body>
+</html>
